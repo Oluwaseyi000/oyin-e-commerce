@@ -1,0 +1,105 @@
+.logo {
+    max-height: 100px;
+    margin: auto;
+    display: block;
+}
+
+.text-monospace{
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.error{
+    color: #ff0000;
+    padding: 15px;
+    background: #fce7e7;
+    text-align: center;
+    font-size: 14px;
+}
+
+.error p {
+    margin-bottom: 0;
+}
+
+.table {
+    display: table;
+    font-family: "Rubik", sans-serif;
+}
+
+.inner-header, .orange-color{
+    color: rgb(230, 118, 23);
+}
+
+.table thead tr th {
+    background: rgb(230, 118, 23) !important;
+    color: #fff !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.text-dark{
+    color: #202020;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.form-check-input:checked[type="radio"] {
+    /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e); */
+    background-position: center;
+    background-size: auto;
+    height: 18px;
+    width: 18px;
+    background-color: rgb(202, 115, 39);
+    border-color:rgb(230, 118, 23);
+}
+
+.review-table-label{
+    font-size: 16px;
+}
+
+.card{
+    padding: 30px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.less-padding{
+    padding: 0;
+}
+
+.btn-primary{
+    background-color: #e67617 !important;
+    border: none;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.font10{
+    font-size:10px;
+}
+
+.color-red{
+    color: #ff0000;
+}
+
+.button-border-radius{
+    border-radius: 4px
+}
+
+.flash-message {
+    margin: 1em auto;
+}
+
+.flash-message .close {
+    color: #0a094f;
+    opacity: 0.8;
+}
+
+.dropdown-item{
+    padding: .55rem 1.5rem;
+}
+
+.swal2-confirm {
+    background-color: #e67617 !important;
+}
+

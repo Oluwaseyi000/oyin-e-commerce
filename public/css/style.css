@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+body{
+    background-color: aliceblue;
+    background-image: url(../img/bg-intro-desktop.png);
+    padding-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000100;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    /* background-color: #800080; */
+}
+
+/* .dark-blue:hover{
+    color: text-info;
+} */
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+  
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.logo{
+    color: darkblue;
+}
+
+.body-color{
+    color: #000100;
+}
+
+/* .color-black{
+    color: #000100;
+} */
