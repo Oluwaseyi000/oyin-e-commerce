@@ -27,11 +27,11 @@
 }
 
 .inner-header, .orange-color{
-    color: rgb(230, 118, 23);
+    color: #0E6EFD;
 }
 
 .table thead tr th {
-    background: rgb(230, 118, 23) !important;
+    background: #0E6EFD !important;
     color: #fff !important;
     padding-top: 20px !important;
     padding-bottom: 20px !important;
@@ -50,7 +50,7 @@
     height: 18px;
     width: 18px;
     background-color: rgb(202, 115, 39);
-    border-color:rgb(230, 118, 23);
+    border-color:#0E6EFD;
 }
 
 .review-table-label{
@@ -68,7 +68,7 @@
 }
 
 .btn-primary{
-    background-color: #e67617 !important;
+    background-color: #0E6EFD !important;
     border: none;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -100,6 +100,7 @@
 }
 
 .swal2-confirm {
-    background-color: #e67617 !important;
+    background-color: #0E6EFD !important;
+    /* background-color: #e67617 !important; */
 }
 

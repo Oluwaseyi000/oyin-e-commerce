@@ -27,7 +27,7 @@ class Controller extends BaseController
         Session::flash('success', $message);
     }
 
-    public function getAuthMember(){
-        return auth('member')->user();
+    public function getAuthUser(){
+        return auth()->user();
     }
 }

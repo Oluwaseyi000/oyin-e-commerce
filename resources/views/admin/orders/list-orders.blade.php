@@ -1,48 +1,67 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            <div class="">
+                <h4 class="text-bold orange-color" style="font-size: 1.2rem">Orders Lists</h4>
+            </div>
             <div class="card">
-                <div class="card-header">Product Lists <span class="pull-right"><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createNewProductModal">+ Add New Product</button></span></div>
+                <div class="card-header"> <span class="pull-right"><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createNewProductModal">+ Add New Product</button></span></div>
 
                 <div class="card-body">
                     <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Product Image</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Unit Price</th>
                             <th scope="col">Qty</th>
-                            <th scope="col">Image</th>
+                            <th scope="col">Total Price</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Customer Email</th>
+                            <th scope="col">Delivery Address</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @forelse ($products as $product)
+                            @forelse ($orderProducts as $op)
+
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$product->name}}</td>
-                                    <td>{{$product->price}}</td>
-                                    <td>{{$product->description}}</td>
-                                    <td>{{$product->quantity}}</td>
-                                    <td><img src="{{asset('images/products/'.$product->image)}}" alt="" height="60"></td>
+                                    <td>{{$op->order->id }}</td>
+                                    <td><img src="{{asset('images/products/'.$op->orderDetails->image)}}" alt="" height="60"></td>
+                                    <td>{{$op->orderDetails->name}}</td>
+                                    <td>{{$op->orderDetails->price}}</td>
+                                    <td>{{$op->orderDetails->quantity}}</td>
+                                    <td>{{$op->orderDetails->price * $op->orderDetails->quantity}}</td>
+                                    <td>{{$op->order->customer->name}}</td>
+                                    <td>{{$op->order->customer->email}}</td>
+                                    <td>{{$op->order->delivery_address}}</td>
+                                    <td> {{$op->status }}</td>
                                     <td>
-                                        @if($product->status_id)
-                                            <i class="btn btn-sm btn-success">Active</i>
-                                            @else
-                                            <i class="btn btn-sm btn-danger">Disable</i>
-                                        @endif
+                                        <div class="dropdown">
+                                            <i class="fa fa-ellipsis-h" aria-hidden="true"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                              <a class="dropdown-item" href="#">View</a>
+                                              @if($op->status_id != App\Models\OrderProduct::STATUS_IN_PROGRESS)
+                                                <a class="dropdown-item" href="{{route('merchant.update-order-status', [$op->id, App\Models\OrderProduct::STATUS_IN_PROGRESS])}}">Mark as In Progress</a>
+                                              @endif
+                                              @if($op->status_id != App\Models\OrderProduct::STATUS_FULFILLED)
+                                                    <a class="dropdown-item" href="{{route('merchant.update-order-status', [$op->id, App\Models\OrderProduct::STATUS_FULFILLED])}}">Mark as Fulfilled</a>
+                                              @endif
+                                            </div>
+                                          </div>
                                     </td>
-                                    <td></td>
                                 </tr>
                             @empty
-                                <td>No Products</td>
+                                <td>No Order</td>
                             @endforelse
-
 
                         </tbody>
                       </table>
