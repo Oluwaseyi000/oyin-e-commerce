@@ -19,7 +19,7 @@ class CreateOrderProductTable extends Migration
             $table->integer('product_id');
             $table->integer('price');
             $table->integer('status_id');
-            $table->text('meta');
+            $table->text('meta')->nullable();
             $table->timestamps();
         });
     }
